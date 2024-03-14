@@ -25,5 +25,4 @@ class MockData: DataSourceProtocol {
         
         return matches
     }
-    
 }

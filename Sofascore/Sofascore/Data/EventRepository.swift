@@ -1,6 +1,7 @@
 import Foundation
 
 class EventRepository {
+    
     private let dataSource: DataSourceProtocol
     
     init(dataSource: DataSourceProtocol) {

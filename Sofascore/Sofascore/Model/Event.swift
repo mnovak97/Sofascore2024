@@ -1,6 +1,7 @@
 import Foundation
 
 struct Event {
+    
     var homeTeam: FootballTeam
     var awayTeam: FootballTeam
     var homeScore: Int
@@ -14,5 +15,4 @@ struct Event {
         let date = Date(timeIntervalSince1970: time)
         return dateFormatter.string(from: date)
     }
-    
 }

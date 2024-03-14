@@ -43,7 +43,6 @@ class LeagueView: BaseView {
     }
 
     override func setupGestureRecognizers() {
-        // Default implementation is empty
     }
 
     override func setupBinding() {
@@ -62,9 +61,7 @@ struct LeagueViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIView, context: Context) {
-        
     }
-    
 }
 
 struct LeagueView_Previws: PreviewProvider {
