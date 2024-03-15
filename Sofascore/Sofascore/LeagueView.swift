@@ -4,25 +4,24 @@ import SofaAcademic
 
 class LeagueView: BaseView {
     
-    private let leagueHorizontalStack: UIStackView = .init()
     private let leagueLogo: UIImageView = .init()
-    private let leagueNameHorizontalStack: UIStackView = .init()
     private let leagueCountry: UILabel = .init()
     private let arrowImage: UIImageView = .init()
     private let leagueName: UILabel = .init()
     
+    override init() {
+        super.init()
+        initializeViews()
+    }
+    
     override func addViews() {
-        addSubview(leagueHorizontalStack)
-        leagueHorizontalStack.addArrangedSubview(leagueLogo)
-        leagueHorizontalStack.addArrangedSubview(leagueNameHorizontalStack)
-        leagueNameHorizontalStack.addArrangedSubview(leagueCountry)
-        leagueNameHorizontalStack.addArrangedSubview(arrowImage)
-        leagueNameHorizontalStack.addArrangedSubview(leagueName)
+        addSubview(leagueLogo)
+        addSubview(leagueCountry)
+        addSubview(arrowImage)
+        addSubview(leagueName)
     }
     
     override func styleViews() {
-        leagueHorizontalStack.axis = .horizontal
-        leagueHorizontalStack.spacing = 32
         leagueCountry.font = Fonts.headline3
         leagueName.font = Fonts.headline3
         leagueName.textColor = Colors.onSurfaceLv2
@@ -31,17 +30,26 @@ class LeagueView: BaseView {
     }
 
     override func setupConstraints() {
-        leagueHorizontalStack.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
         leagueLogo.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(12)
-            $0.leading.equalToSuperview().offset(16)
+            $0.top.bottom.equalToSuperview().inset(12)
+            $0.leading.equalToSuperview().inset(16)
+            $0.trailing.lessThanOrEqualToSuperview()
             $0.width.height.equalTo(32)
+         }
+        leagueCountry.snp.makeConstraints {
+            $0.leading.equalTo(leagueLogo.snp.trailing).offset(32)
+            $0.trailing.lessThanOrEqualToSuperview()
+            $0.top.bottom.equalToSuperview().inset(20)
         }
-        leagueNameHorizontalStack.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview()
+        arrowImage.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(12)
+            $0.leading.equalTo(leagueCountry.snp.trailing)
+            $0.trailing.lessThanOrEqualToSuperview()
+        }
+        leagueName.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(12)
+            $0.leading.equalTo(arrowImage.snp.trailing)
+            $0.trailing.lessThanOrEqualToSuperview()
         }
     }
 
@@ -49,6 +57,9 @@ class LeagueView: BaseView {
     }
 
     override func setupBinding() {
+    }
+    
+    func initializeViews() {
         leagueLogo.image = UIImage(named: "laliga")
         leagueCountry.text = "Spain"
         arrowImage.image = UIImage(named: "icPointerRight")
