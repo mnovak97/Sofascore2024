@@ -1,44 +1,60 @@
 import UIKit
+import SofaAcademic
 import SnapKit
 
 class ViewController: UIViewController {
-
-    let eventRespository = EventRepository(dataSource: MockData())
-    let leagueView: LeagueView = .init()
+    
+    private let eventRespository = EventRepository(dataSource: MockData())
+    private let leagueView: LeagueView = .init()
+    private let eventStackView: UIStackView = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addSubview(leagueView)
-        leagueView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(56)
-        }
+        addViews()
+        setupConstraints()
+        styleViews()
+        fetchEvents()
+    }
+    
+    func fetchEvents() {
         eventRespository.fetch { events in
             guard let events = events else {
                 print("Error")
                 return
             }
                 
-            var previousEventView: UIView?
             for event in events {
                 let eventView = EventView()
                 eventView.configure(event)
-                self.view.addSubview(eventView)
-                
-                eventView.snp.makeConstraints { make in
-                    make.leading.trailing.equalToSuperview()
-                    make.height.equalTo(56)
-                    
-                    if let previousView = previousEventView {
-                        make.top.equalTo(previousView.snp.bottom)
-                    } else {
-                        make.top.equalTo(self.leagueView.snp.bottom)
-                    }
-                }
-                previousEventView = eventView
+                self.eventStackView.addArrangedSubview(eventView)
             }
         }
+    }
+}
+
+extension ViewController: BaseViewProtocol {
+    
+    func addViews() {
+        view.addSubview(leagueView)
+        view.addSubview(eventStackView)
+    }
+    
+    func setupConstraints() {
+        leagueView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(eventStackView.snp.top)
+        }
+        
+        eventStackView.snp.makeConstraints { make in
+            make.top.equalTo(leagueView.snp.bottom)
+            make.trailing.leading.equalToSuperview()
+            make.bottom.lessThanOrEqualToSuperview()
+        }
+    }
+    
+    func styleViews() {
+        view.backgroundColor = .white
+        eventStackView.axis = .vertical
     }
 }

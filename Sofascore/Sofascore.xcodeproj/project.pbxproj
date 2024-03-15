@@ -22,13 +22,15 @@
 		557C2B792BA1C05A0090FAD4 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B782BA1C05A0090FAD4 /* MockData.swift */; };
 		557C2B7B2BA1C57A0090FAD4 /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B7A2BA1C57A0090FAD4 /* EventRepository.swift */; };
 		557C2B802BA1C8930090FAD4 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B7F2BA1C8930090FAD4 /* EventView.swift */; };
-		557C2B832BA1CC690090FAD4 /* ApplicationsFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B822BA1CC690090FAD4 /* ApplicationsFonts.swift */; };
-		557C2B852BA1CC990090FAD4 /* ApplicationColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B842BA1CC990090FAD4 /* ApplicationColors.swift */; };
-		557C2B872BA1CCB80090FAD4 /* ApplicationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B862BA1CCB80090FAD4 /* ApplicationStrings.swift */; };
+		557C2B832BA1CC690090FAD4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B822BA1CC690090FAD4 /* Fonts.swift */; };
+		557C2B852BA1CC990090FAD4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B842BA1CC990090FAD4 /* Colors.swift */; };
+		557C2B872BA1CCB80090FAD4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B862BA1CCB80090FAD4 /* Strings.swift */; };
 		557C2B892BA1FC8F0090FAD4 /* LeagueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B882BA1FC8F0090FAD4 /* LeagueView.swift */; };
 		557C2B8C2BA206FF0090FAD4 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 557C2B8A2BA206FF0090FAD4 /* Roboto-Bold.ttf */; };
 		557C2B8D2BA206FF0090FAD4 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 557C2B8B2BA206FF0090FAD4 /* Roboto-Regular.ttf */; };
 		557C2B902BA207770090FAD4 /* Roboto Condensed Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 557C2B8F2BA207770090FAD4 /* Roboto Condensed Regular.ttf */; };
+		557C2B942BA465150090FAD4 /* TeamInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B932BA465150090FAD4 /* TeamInfoView.swift */; };
+		557C2B962BA46D300090FAD4 /* TeamScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B952BA46D300090FAD4 /* TeamScoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,13 +48,15 @@
 		557C2B782BA1C05A0090FAD4 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		557C2B7A2BA1C57A0090FAD4 /* EventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
 		557C2B7F2BA1C8930090FAD4 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
-		557C2B822BA1CC690090FAD4 /* ApplicationsFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsFonts.swift; sourceTree = "<group>"; };
-		557C2B842BA1CC990090FAD4 /* ApplicationColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationColors.swift; sourceTree = "<group>"; };
-		557C2B862BA1CCB80090FAD4 /* ApplicationStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStrings.swift; sourceTree = "<group>"; };
+		557C2B822BA1CC690090FAD4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		557C2B842BA1CC990090FAD4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		557C2B862BA1CCB80090FAD4 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		557C2B882BA1FC8F0090FAD4 /* LeagueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueView.swift; sourceTree = "<group>"; };
 		557C2B8A2BA206FF0090FAD4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		557C2B8B2BA206FF0090FAD4 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		557C2B8F2BA207770090FAD4 /* Roboto Condensed Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed Regular.ttf"; sourceTree = "<group>"; };
+		557C2B932BA465150090FAD4 /* TeamInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoView.swift; sourceTree = "<group>"; };
+		557C2B952BA46D300090FAD4 /* TeamScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				557C2B5D2B9740D00090FAD4 /* Info.plist */,
 				557C2B7F2BA1C8930090FAD4 /* EventView.swift */,
 				557C2B882BA1FC8F0090FAD4 /* LeagueView.swift */,
+				557C2B932BA465150090FAD4 /* TeamInfoView.swift */,
+				557C2B952BA46D300090FAD4 /* TeamScoreView.swift */,
 			);
 			path = Sofascore;
 			sourceTree = "<group>";
@@ -127,9 +133,9 @@
 		557C2B812BA1CC550090FAD4 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				557C2B822BA1CC690090FAD4 /* ApplicationsFonts.swift */,
-				557C2B842BA1CC990090FAD4 /* ApplicationColors.swift */,
-				557C2B862BA1CCB80090FAD4 /* ApplicationStrings.swift */,
+				557C2B822BA1CC690090FAD4 /* Fonts.swift */,
+				557C2B842BA1CC990090FAD4 /* Colors.swift */,
+				557C2B862BA1CCB80090FAD4 /* Strings.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -225,17 +231,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				557C2B832BA1CC690090FAD4 /* ApplicationsFonts.swift in Sources */,
-				557C2B872BA1CCB80090FAD4 /* ApplicationStrings.swift in Sources */,
+				557C2B832BA1CC690090FAD4 /* Fonts.swift in Sources */,
+				557C2B872BA1CCB80090FAD4 /* Strings.swift in Sources */,
+				557C2B962BA46D300090FAD4 /* TeamScoreView.swift in Sources */,
 				557C2B772BA1C0020090FAD4 /* DataSourceProtocol.swift in Sources */,
 				557C2B6D2BA0A2B60090FAD4 /* Event.swift in Sources */,
 				557C2B802BA1C8930090FAD4 /* EventView.swift in Sources */,
 				557C2B542B9740CF0090FAD4 /* ViewController.swift in Sources */,
 				557C2B502B9740CE0090FAD4 /* AppDelegate.swift in Sources */,
 				557C2B7B2BA1C57A0090FAD4 /* EventRepository.swift in Sources */,
-				557C2B852BA1CC990090FAD4 /* ApplicationColors.swift in Sources */,
+				557C2B852BA1CC990090FAD4 /* Colors.swift in Sources */,
 				557C2B792BA1C05A0090FAD4 /* MockData.swift in Sources */,
 				557C2B742BA0A5900090FAD4 /* FootballTeam.swift in Sources */,
+				557C2B942BA465150090FAD4 /* TeamInfoView.swift in Sources */,
 				557C2B6F2BA0A2CD0090FAD4 /* League.swift in Sources */,
 				557C2B522B9740CF0090FAD4 /* SceneDelegate.swift in Sources */,
 				557C2B892BA1FC8F0090FAD4 /* LeagueView.swift in Sources */,
