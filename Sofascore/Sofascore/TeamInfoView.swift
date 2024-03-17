@@ -30,7 +30,6 @@ class TeamInfoView: BaseView {
         teamLogoImage.snp.makeConstraints {
             $0.width.height.equalTo(16)
         }
-        
         teamNameLabel.snp.makeConstraints {
             $0.height.equalTo(16)
         }

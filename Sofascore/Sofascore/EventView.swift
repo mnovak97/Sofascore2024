@@ -41,13 +41,17 @@ class EventView: BaseView {
     override func styleViews() {
         eventHorizontalStack.axis = .horizontal
         eventHorizontalStack.spacing = 16
+        eventHorizontalStack.alignment = .center
         matchStatusVerticalStack.axis = .vertical
+        matchStatusVerticalStack.spacing = 4
         matchStatusVerticalStack.distribution = .fillEqually
         timeLabel.textAlignment = .center
         statusLabel.textAlignment = .center
         teamInfoVerticalStack.axis = .vertical
+        teamInfoVerticalStack.spacing = 4
         teamInfoVerticalStack.distribution = .fillEqually
         scoreInfoVerticalStack.axis = .vertical
+        scoreInfoVerticalStack.spacing = 4
         scoreInfoVerticalStack.distribution = .fillEqually
         timeLabel.font = Fonts.micro
         timeLabel.textColor = Colors.onSurfaceLv2
@@ -56,41 +60,27 @@ class EventView: BaseView {
     }
 
     override func setupConstraints() {
-        snp.makeConstraints {
-            $0.height.equalTo(56)
-        }
-        
         eventHorizontalStack.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        
         matchStatusVerticalStack.snp.makeConstraints {
-            $0.top.equalTo(eventHorizontalStack.snp.top)
-            $0.bottom.equalTo(eventHorizontalStack.snp.bottom)
-            $0.leading.equalTo(eventHorizontalStack.snp.leading)
+            $0.top.equalTo(eventHorizontalStack.snp.top).inset(10)
+            $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(10)
             $0.trailing.equalTo(divider.snp.leading)
             $0.width.equalTo(64)
         }
-        
         divider.snp.makeConstraints {
             $0.top.equalTo(eventHorizontalStack.snp.top).inset(8)
             $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(8)
             $0.width.equalTo(1)
         }
-        
         teamInfoVerticalStack.snp.makeConstraints {
-            $0.top.equalTo(eventHorizontalStack.snp.top)
-            $0.bottom.equalTo(eventHorizontalStack.snp.bottom)
-            $0.leading.equalTo(divider.snp.trailing).offset(16)
-            $0.trailing.equalTo(scoreInfoVerticalStack.snp.leading)
+            $0.top.equalTo(eventHorizontalStack.snp.top).inset(10)
+            $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(10)
         }
-        
-        
         scoreInfoVerticalStack.snp.makeConstraints {
-            $0.top.equalTo(eventHorizontalStack.snp.top)
-            $0.bottom.equalTo(eventHorizontalStack.snp.bottom)
-            $0.leading.equalTo(teamInfoVerticalStack.snp.trailing)
-            $0.trailing.equalTo(eventHorizontalStack.snp.trailing)
+            $0.top.equalTo(eventHorizontalStack.snp.top).inset(10)
+            $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(10)
         }
     }
 
