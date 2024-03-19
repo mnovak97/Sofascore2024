@@ -2,27 +2,38 @@ import Foundation
 
 class MockData: DataSourceProtocol {
     
-    func fetch(completion: @escaping ([Event]?) -> Void) {
+    func fetch(completion: @escaping ([Section]?) -> Void) {
         let mockEvents = MockData.generateMockEvents()
         completion(mockEvents)
     }
     
-    static func generateMockEvents() -> [Event] {
+    static func generateMockEvents() -> [Section] {
         
-        let homeTeam = FootballTeam(name: "Manchester United", logo: "manchesterUnited")
-        let awayTeam = FootballTeam(name: "Barcelona", logo: "barcelona")
+        let laliga = League(country: "Spain", name: "LaLiga", logo: "laliga")
+        let bundesliga = League(country: "Germany", name: "Bundesliga", logo: "bundesliga")
+        let manchesterUnited = FootballTeam(name: "Manchester United", logo: "manchesterUnited")
+        let barcelona = FootballTeam(name: "Barcelona", logo: "barcelona")
+        let bayern = FootballTeam(name: "Bayern München", logo: "bayern")
+        let borrusia = FootballTeam(name: "Borrusia Dortmund", logo: "borussia")
         
-        let firstMatch = Event(homeTeam: homeTeam, awayTeam: awayTeam, homeScore: 1, awayScore: 2, status: .finished, time: 1710331200)
-        let secondMatch = Event(homeTeam: homeTeam, awayTeam: awayTeam, homeScore: 0, awayScore: 1, status: .inProgress, time: 1710342000)
-        let thirdMatch = Event(homeTeam: homeTeam, awayTeam: awayTeam, homeScore: 0, awayScore: 0, status: .notStarted, time: 1710349200)
-        let fourthdMatch = Event(homeTeam: homeTeam, awayTeam: awayTeam, homeScore: 0, awayScore: 0, status: .notStarted, time: 1710354600)
+        var sections: [Section] = []
+        var spainEvents: [Event] = []
+        var germanyEvents: [Event] = []
         
-        var matches: [Event] = []
-        matches.append(firstMatch)
-        matches.append(secondMatch)
-        matches.append(thirdMatch)
-        matches.append(fourthdMatch)
+        for _ in 0..<10 {
+            let matchSpain = Event(homeTeam: manchesterUnited, awayTeam: barcelona, homeScore: Int.random(in: 0...3), awayScore: Int.random(in: 0...3), status: [.finished, .inProgress, .notStarted].randomElement() ?? .notStarted, time: TimeInterval(Int.random(in: 1710000000...1720000000)))
+            spainEvents.append(matchSpain)
+            
+            let matchGermany = Event(homeTeam: bayern, awayTeam: borrusia, homeScore: Int.random(in: 0...3), awayScore: Int.random(in: 0...3), status: [.finished, .inProgress, .notStarted].randomElement() ?? .notStarted, time: TimeInterval(Int.random(in: 1710000000...1720000000)))
+            germanyEvents.append(matchGermany)
+            
+        }
         
-        return matches
+        let sectionOne = Section(league: laliga, events: spainEvents)
+        let sectionTwo = Section(league: bundesliga, events: germanyEvents)
+        sections.append(sectionOne)
+        sections.append(sectionTwo)
+        
+        return sections
     }
 }
