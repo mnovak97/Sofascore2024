@@ -51,9 +51,17 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
             headerView.configure(league: league)
             
             return headerView
+        } else if kind == UICollectionView.elementKindSectionFooter {
+            let separatorView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Strings.separatorView, for: indexPath)
+            separatorView.backgroundColor = Colors.onSurfaceLv4
+            return separatorView
         } else {
             return UICollectionReusableView()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -62,6 +70,10 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 56)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,6 +103,7 @@ extension EventsViewController: BaseViewProtocol {
         view.backgroundColor = .white
         collectionView.register(EventCell.self, forCellWithReuseIdentifier: Strings.eventCell)
         collectionView.register(LeagueCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Strings.leagueCell)
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: Strings.separatorView)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
