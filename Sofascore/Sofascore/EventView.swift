@@ -8,6 +8,7 @@ class EventView: BaseView {
     
     private let eventHorizontalStack: UIStackView = .init()
     private let matchStatusVerticalStack: UIStackView = .init()
+    private let teamHorizontalStack: UIStackView = .init()
     private let teamInfoVerticalStack: UIStackView = .init()
     private let homeTeamInfo: TeamInfoView = .init()
     private let awayTeamInfo: TeamInfoView = .init()
@@ -25,14 +26,16 @@ class EventView: BaseView {
         matchStatusVerticalStack.addArrangedSubview(timeLabel)
         matchStatusVerticalStack.addArrangedSubview(statusLabel)
         
-        eventHorizontalStack.addArrangedSubview(divider)
+        eventHorizontalStack.addArrangedSubview(teamHorizontalStack)
         
-        eventHorizontalStack.addArrangedSubview(teamInfoVerticalStack)
+        teamHorizontalStack.addArrangedSubview(divider)
+        
+        teamHorizontalStack.addArrangedSubview(teamInfoVerticalStack)
         
         teamInfoVerticalStack.addArrangedSubview(homeTeamInfo)
         teamInfoVerticalStack.addArrangedSubview(awayTeamInfo)
         
-        eventHorizontalStack.addArrangedSubview(scoreInfoVerticalStack)
+        teamHorizontalStack.addArrangedSubview(scoreInfoVerticalStack)
         scoreInfoVerticalStack.addArrangedSubview(hometeamScore)
         scoreInfoVerticalStack.addArrangedSubview(awayTeamScore)
         
@@ -42,39 +45,35 @@ class EventView: BaseView {
         eventHorizontalStack.axis = .horizontal
         eventHorizontalStack.alignment = .center
         eventHorizontalStack.distribution = .fill
+        teamHorizontalStack.axis = .horizontal
+        teamHorizontalStack.spacing = 16
         matchStatusVerticalStack.axis = .vertical
         matchStatusVerticalStack.spacing = 4
-        matchStatusVerticalStack.layoutMargins = .init(top: 10, left: 4, bottom: 10, right: 4)
-        matchStatusVerticalStack.isLayoutMarginsRelativeArrangement = true
         timeLabel.textAlignment = .center
         statusLabel.textAlignment = .center
         teamInfoVerticalStack.axis = .vertical
         teamInfoVerticalStack.spacing = 4
-        teamInfoVerticalStack.layoutMargins = .init(top: 10, left: 16, bottom: 10, right: 16)
-        teamInfoVerticalStack.isLayoutMarginsRelativeArrangement = true
         scoreInfoVerticalStack.axis = .vertical
         scoreInfoVerticalStack.spacing = 4
-        scoreInfoVerticalStack.isLayoutMarginsRelativeArrangement = true
-        scoreInfoVerticalStack.layoutMargins = .init(top: 10, left: 0, bottom: 10, right: 16)
         timeLabel.font = Fonts.micro
         timeLabel.textColor = Colors.onSurfaceLv2
         hometeamScore.teamScore.textAlignment = .right
         awayTeamScore.teamScore.textAlignment = .right
         statusLabel.font = Fonts.micro
         divider.backgroundColor = Colors.onSurfaceLv4
-        divider.layoutMargins = .init(top: 8, left: 0, bottom: 8, right: 0)
     }
 
     override func setupConstraints() {
         eventHorizontalStack.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.bottom.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().inset(4)
+            $0.trailing.equalToSuperview().inset(16)
         }
         matchStatusVerticalStack.snp.makeConstraints {
             $0.width.equalTo(64)
         }
         divider.snp.makeConstraints {
             $0.width.equalTo(1)
-            $0.height.equalTo(40)
         }
         scoreInfoVerticalStack.snp.makeConstraints {
             $0.width.equalTo(32)
