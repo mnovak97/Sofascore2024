@@ -18,7 +18,6 @@ class TeamScoreView: BaseView {
     override func setupConstraints() {
         teamScore.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.width.equalTo(32)
         }
     }
     

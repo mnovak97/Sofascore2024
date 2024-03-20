@@ -40,23 +40,29 @@ class EventView: BaseView {
 
     override func styleViews() {
         eventHorizontalStack.axis = .horizontal
-        eventHorizontalStack.spacing = 16
         eventHorizontalStack.alignment = .center
+        eventHorizontalStack.distribution = .fill
         matchStatusVerticalStack.axis = .vertical
         matchStatusVerticalStack.spacing = 4
-        matchStatusVerticalStack.distribution = .fillEqually
+        matchStatusVerticalStack.layoutMargins = .init(top: 10, left: 4, bottom: 10, right: 4)
+        matchStatusVerticalStack.isLayoutMarginsRelativeArrangement = true
         timeLabel.textAlignment = .center
         statusLabel.textAlignment = .center
         teamInfoVerticalStack.axis = .vertical
         teamInfoVerticalStack.spacing = 4
-        teamInfoVerticalStack.distribution = .fillEqually
+        teamInfoVerticalStack.layoutMargins = .init(top: 10, left: 16, bottom: 10, right: 16)
+        teamInfoVerticalStack.isLayoutMarginsRelativeArrangement = true
         scoreInfoVerticalStack.axis = .vertical
         scoreInfoVerticalStack.spacing = 4
-        scoreInfoVerticalStack.distribution = .fillEqually
+        scoreInfoVerticalStack.isLayoutMarginsRelativeArrangement = true
+        scoreInfoVerticalStack.layoutMargins = .init(top: 10, left: 0, bottom: 10, right: 16)
         timeLabel.font = Fonts.micro
         timeLabel.textColor = Colors.onSurfaceLv2
+        hometeamScore.teamScore.textAlignment = .right
+        awayTeamScore.teamScore.textAlignment = .right
         statusLabel.font = Fonts.micro
         divider.backgroundColor = Colors.onSurfaceLv4
+        divider.layoutMargins = .init(top: 8, left: 0, bottom: 8, right: 0)
     }
 
     override func setupConstraints() {
@@ -64,23 +70,14 @@ class EventView: BaseView {
             $0.edges.equalToSuperview()
         }
         matchStatusVerticalStack.snp.makeConstraints {
-            $0.top.equalTo(eventHorizontalStack.snp.top).inset(10)
-            $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(10)
-            $0.trailing.equalTo(divider.snp.leading)
             $0.width.equalTo(64)
         }
         divider.snp.makeConstraints {
-            $0.top.equalTo(eventHorizontalStack.snp.top).inset(8)
-            $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(8)
             $0.width.equalTo(1)
-        }
-        teamInfoVerticalStack.snp.makeConstraints {
-            $0.top.equalTo(eventHorizontalStack.snp.top).inset(10)
-            $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(10)
+            $0.height.equalTo(40)
         }
         scoreInfoVerticalStack.snp.makeConstraints {
-            $0.top.equalTo(eventHorizontalStack.snp.top).inset(10)
-            $0.bottom.equalTo(eventHorizontalStack.snp.bottom).inset(10)
+            $0.width.equalTo(32)
         }
     }
 
@@ -118,7 +115,6 @@ class EventView: BaseView {
         }
     }
 }
-
 
 struct EventViewRepresentable: UIViewRepresentable {
     typealias UIViewType = UIView
