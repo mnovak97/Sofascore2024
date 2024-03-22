@@ -8,7 +8,7 @@ class EventRepository {
         self.dataSource = dataSource
     }
     
-    func fetch(completion: @escaping ([Event]?) -> Void) {
+    func fetch(completion: @escaping ([Section]?) -> Void) {
         dataSource.fetch(completion: completion)
     }
 }

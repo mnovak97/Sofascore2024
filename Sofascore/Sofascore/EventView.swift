@@ -110,6 +110,11 @@ class EventView: BaseView {
             } else if event.homeScore < event.awayScore {
                 homeTeamInfo.teamNameLabel.textColor = Colors.onSurfaceLv2
                 hometeamScore.teamScore.textColor = Colors.onSurfaceLv2
+            } else if event.homeScore == event.awayScore {
+                homeTeamInfo.teamNameLabel.textColor = Colors.onSurfaceLv2
+                hometeamScore.teamScore.textColor = Colors.onSurfaceLv2
+                awayTeamInfo.teamNameLabel.textColor = Colors.onSurfaceLv2
+                awayTeamScore.teamScore.textColor = Colors.onSurfaceLv2
             }
         }
     }
