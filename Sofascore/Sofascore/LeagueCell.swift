@@ -5,6 +5,7 @@ import SnapKit
 
 class LeagueCell: UICollectionReusableView {
 
+    static let identifier = "League Cell"
     private let leagueView: LeagueView = LeagueView()
 
     override init(frame: CGRect) {
@@ -22,7 +23,9 @@ class LeagueCell: UICollectionReusableView {
     }
 }
 
+//MARK: BaseViewProtocol
 extension LeagueCell: BaseViewProtocol {
+    
     func addViews() {
         addSubview(leagueView)
     }

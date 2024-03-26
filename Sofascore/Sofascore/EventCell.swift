@@ -5,6 +5,7 @@ import UIKit
 
 class EventCell: UICollectionViewCell {
 
+    static let identifier = "EventCell"
     private let eventView: EventView = EventView()
 
     override init(frame: CGRect) {
@@ -21,7 +22,10 @@ class EventCell: UICollectionViewCell {
         eventView.configure(event)
     }
 }
+
+// MARK: - BaseViewProtocol
 extension EventCell: BaseViewProtocol {
+    
     func addViews() {
         addSubview(eventView)
     }

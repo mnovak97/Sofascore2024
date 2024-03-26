@@ -6,7 +6,6 @@ import SwiftUI
 
 class EventView: BaseView {
     
-    private let eventHorizontalStack: UIStackView = .init()
     private let matchStatusVerticalStack: UIStackView = .init()
     private let teamHorizontalStack: UIStackView = .init()
     private let teamInfoVerticalStack: UIStackView = .init()
@@ -20,13 +19,11 @@ class EventView: BaseView {
     private let divider: UIView = .init()
     
     override func addViews() {
-        addSubview(eventHorizontalStack)
-        
-        eventHorizontalStack.addArrangedSubview(matchStatusVerticalStack)
+        addSubview(matchStatusVerticalStack)
         matchStatusVerticalStack.addArrangedSubview(timeLabel)
         matchStatusVerticalStack.addArrangedSubview(statusLabel)
         
-        eventHorizontalStack.addArrangedSubview(teamHorizontalStack)
+        addSubview(teamHorizontalStack)
         
         teamHorizontalStack.addArrangedSubview(divider)
         
@@ -42,9 +39,6 @@ class EventView: BaseView {
     }
 
     override func styleViews() {
-        eventHorizontalStack.axis = .horizontal
-        eventHorizontalStack.alignment = .center
-        eventHorizontalStack.distribution = .fill
         teamHorizontalStack.axis = .horizontal
         teamHorizontalStack.spacing = 16
         matchStatusVerticalStack.axis = .vertical
@@ -64,13 +58,15 @@ class EventView: BaseView {
     }
 
     override func setupConstraints() {
-        eventHorizontalStack.snp.makeConstraints {
+        matchStatusVerticalStack.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(10)
             $0.leading.equalToSuperview().inset(4)
-            $0.trailing.equalToSuperview().inset(16)
-        }
-        matchStatusVerticalStack.snp.makeConstraints {
             $0.width.equalTo(64)
+        }
+        teamHorizontalStack.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(10)
+            $0.trailing.equalToSuperview().inset(16)
+            $0.leading.equalTo(matchStatusVerticalStack.snp.trailing)
         }
         divider.snp.makeConstraints {
             $0.width.equalTo(1)
