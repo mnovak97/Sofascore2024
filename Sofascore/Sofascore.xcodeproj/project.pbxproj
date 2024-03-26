@@ -11,9 +11,15 @@
 		550BCE412BAE4867000AEE1C /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE402BAE4867000AEE1C /* EventCell.swift */; };
 		550BCE432BAE48E3000AEE1C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE422BAE48E3000AEE1C /* EventViewController.swift */; };
 		550BCE452BAE492B000AEE1C /* LeagueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE442BAE492B000AEE1C /* LeagueCell.swift */; };
+		550BCE992BB1E663000AEE1C /* HeaderCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE982BB1E663000AEE1C /* HeaderCustomView.swift */; };
+		550BCE9B2BB1ED58000AEE1C /* SafeAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE9A2BB1ED58000AEE1C /* SafeAreaHeaderView.swift */; };
+		550BCE9D2BB21074000AEE1C /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE9C2BB21074000AEE1C /* CustomTabView.swift */; };
+		550BCE9F2BB21083000AEE1C /* TabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE9E2BB21083000AEE1C /* TabViewItem.swift */; };
+		550BCEA12BB21177000AEE1C /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCEA02BB21177000AEE1C /* TabItem.swift */; };
+		550BCEA32BB2138E000AEE1C /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCEA22BB2138E000AEE1C /* Sport.swift */; };
 		557C2B502B9740CE0090FAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B4F2B9740CE0090FAD4 /* AppDelegate.swift */; };
 		557C2B522B9740CF0090FAD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B512B9740CF0090FAD4 /* SceneDelegate.swift */; };
-		557C2B542B9740CF0090FAD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B532B9740CF0090FAD4 /* ViewController.swift */; };
+		557C2B542B9740CF0090FAD4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B532B9740CF0090FAD4 /* MainViewController.swift */; };
 		557C2B592B9740D00090FAD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557C2B582B9740D00090FAD4 /* Assets.xcassets */; };
 		557C2B652BA09F030090FAD4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 557C2B642BA09F030090FAD4 /* SnapKit */; };
 		557C2B672BA09F030090FAD4 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 557C2B662BA09F030090FAD4 /* SnapKit-Dynamic */; };
@@ -42,10 +48,16 @@
 		550BCE402BAE4867000AEE1C /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		550BCE422BAE48E3000AEE1C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		550BCE442BAE492B000AEE1C /* LeagueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCell.swift; sourceTree = "<group>"; };
+		550BCE982BB1E663000AEE1C /* HeaderCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCustomView.swift; sourceTree = "<group>"; };
+		550BCE9A2BB1ED58000AEE1C /* SafeAreaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaHeaderView.swift; sourceTree = "<group>"; };
+		550BCE9C2BB21074000AEE1C /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		550BCE9E2BB21083000AEE1C /* TabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItem.swift; sourceTree = "<group>"; };
+		550BCEA02BB21177000AEE1C /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		550BCEA22BB2138E000AEE1C /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		557C2B4C2B9740CE0090FAD4 /* Sofascore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sofascore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557C2B4F2B9740CE0090FAD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		557C2B512B9740CF0090FAD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		557C2B532B9740CF0090FAD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		557C2B532B9740CF0090FAD4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		557C2B582B9740D00090FAD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		557C2B5D2B9740D00090FAD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		557C2B6C2BA0A2B60090FAD4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -106,7 +118,7 @@
 				557C2B6B2BA0A2A80090FAD4 /* Model */,
 				557C2B4F2B9740CE0090FAD4 /* AppDelegate.swift */,
 				557C2B512B9740CF0090FAD4 /* SceneDelegate.swift */,
-				557C2B532B9740CF0090FAD4 /* ViewController.swift */,
+				557C2B532B9740CF0090FAD4 /* MainViewController.swift */,
 				557C2B582B9740D00090FAD4 /* Assets.xcassets */,
 				557C2B5D2B9740D00090FAD4 /* Info.plist */,
 				557C2B7F2BA1C8930090FAD4 /* EventView.swift */,
@@ -116,6 +128,10 @@
 				550BCE402BAE4867000AEE1C /* EventCell.swift */,
 				550BCE422BAE48E3000AEE1C /* EventViewController.swift */,
 				550BCE442BAE492B000AEE1C /* LeagueCell.swift */,
+				550BCE982BB1E663000AEE1C /* HeaderCustomView.swift */,
+				550BCE9A2BB1ED58000AEE1C /* SafeAreaHeaderView.swift */,
+				550BCE9C2BB21074000AEE1C /* CustomTabView.swift */,
+				550BCE9E2BB21083000AEE1C /* TabViewItem.swift */,
 			);
 			path = Sofascore;
 			sourceTree = "<group>";
@@ -128,6 +144,8 @@
 				557C2B712BA0A3560090FAD4 /* MatchStatus.swift */,
 				557C2B732BA0A5900090FAD4 /* FootballTeam.swift */,
 				550BCE3E2BAE46FB000AEE1C /* Section.swift */,
+				550BCEA02BB21177000AEE1C /* TabItem.swift */,
+				550BCEA22BB2138E000AEE1C /* Sport.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,10 +267,12 @@
 				557C2B772BA1C0020090FAD4 /* DataSourceProtocol.swift in Sources */,
 				557C2B6D2BA0A2B60090FAD4 /* Event.swift in Sources */,
 				550BCE432BAE48E3000AEE1C /* EventViewController.swift in Sources */,
+				550BCEA12BB21177000AEE1C /* TabItem.swift in Sources */,
 				557C2B802BA1C8930090FAD4 /* EventView.swift in Sources */,
-				557C2B542B9740CF0090FAD4 /* ViewController.swift in Sources */,
+				557C2B542B9740CF0090FAD4 /* MainViewController.swift in Sources */,
 				557C2B502B9740CE0090FAD4 /* AppDelegate.swift in Sources */,
 				550BCE412BAE4867000AEE1C /* EventCell.swift in Sources */,
+				550BCE9D2BB21074000AEE1C /* CustomTabView.swift in Sources */,
 				557C2B7B2BA1C57A0090FAD4 /* EventRepository.swift in Sources */,
 				550BCE3F2BAE46FB000AEE1C /* Section.swift in Sources */,
 				557C2B852BA1CC990090FAD4 /* Colors.swift in Sources */,
@@ -260,10 +280,14 @@
 				557C2B742BA0A5900090FAD4 /* FootballTeam.swift in Sources */,
 				557C2B942BA465150090FAD4 /* TeamInfoView.swift in Sources */,
 				557C2B6F2BA0A2CD0090FAD4 /* League.swift in Sources */,
+				550BCEA32BB2138E000AEE1C /* Sport.swift in Sources */,
 				557C2B522B9740CF0090FAD4 /* SceneDelegate.swift in Sources */,
+				550BCE9B2BB1ED58000AEE1C /* SafeAreaHeaderView.swift in Sources */,
+				550BCE992BB1E663000AEE1C /* HeaderCustomView.swift in Sources */,
 				557C2B892BA1FC8F0090FAD4 /* LeagueView.swift in Sources */,
 				550BCE452BAE492B000AEE1C /* LeagueCell.swift in Sources */,
 				557C2B722BA0A3560090FAD4 /* MatchStatus.swift in Sources */,
+				550BCE9F2BB21083000AEE1C /* TabViewItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

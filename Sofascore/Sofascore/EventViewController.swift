@@ -6,7 +6,7 @@ import UIKit
 class EventsViewController: UIViewController {
     
     private var sectionsData: [Section] = []
-    private let eventRespository = EventRepository(dataSource: MockData())
+    private let eventRepository: EventRepository
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
@@ -14,6 +14,15 @@ class EventsViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
+    
+    init(sport: Sport) {
+        self.eventRepository = EventRepository(dataSource: MockData(for: sport))
+        super.init(nibName: nil, bundle: nil)
+    }
+        
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +33,7 @@ class EventsViewController: UIViewController {
     }
     
     func fetchEvents() {
-        eventRespository.fetch { sections in
+        eventRepository.fetch { sections in
             if let sections {
                 self.sectionsData = sections
             }
