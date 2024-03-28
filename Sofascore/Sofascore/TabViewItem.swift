@@ -6,54 +6,47 @@ import SnapKit
 
 class TabViewItem: BaseView {
     
+    private let verticalStack: UIStackView = .init()
     private let sportLogo: UIImageView = .init()
     private let sportName: UILabel = .init()
     private let selector: UIView = .init()
     var isSelected: Bool = false {
         didSet {
-            selector.isHidden = !isSelected
+            selector.backgroundColor = isSelected ? Colors.surfaceSurface1 : .clear
         }
     }
     
     override func addViews() {
-        addSubview(sportLogo)
-        addSubview(sportName)
-        addSubview(selector)
+        addSubview(verticalStack)
+        verticalStack.addArrangedSubview(sportLogo)
+        verticalStack.addArrangedSubview(sportName)
+        verticalStack.addArrangedSubview(selector)
     }
     
     override func setupConstraints() {
-        sportLogo.snp.makeConstraints {
+        verticalStack.snp.makeConstraints {
             $0.top.equalToSuperview().inset(4)
-            $0.leading.trailing.equalToSuperview()
-            $0.size.equalTo(16)
-        }
-        sportName.snp.makeConstraints {
-            $0.top.equalTo(sportLogo.snp.bottom).offset(4)
-            $0.bottom.equalTo(selector.snp.top).inset(4)
-            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.trailing.leading.equalToSuperview().inset(8)
         }
         selector.snp.makeConstraints {
-            $0.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(8)
             $0.height.equalTo(4)
         }
     }
     
     override func styleViews() {
+        verticalStack.axis = .vertical
+        verticalStack.spacing = 4
         sportName.textColor = Colors.surfaceSurface1
         sportName.textAlignment = .center
         sportName.font = Fonts.body
         sportLogo.contentMode = .scaleAspectFit
-        selector.backgroundColor = Colors.surfaceSurface1
-        selector.isHidden = true
     }
     
-    func configure(tabItem: TabItem, isSelected: Bool) {
+    func configure(tabItem: TabItem) {
         sportLogo.image = UIImage(named: tabItem.logo)
         sportName.text = tabItem.sportName
-        self.isSelected = isSelected
     }
-    
 }
 
 struct TabViewItemRepresentable: UIViewRepresentable {
@@ -61,7 +54,7 @@ struct TabViewItemRepresentable: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIView {
         let tabView = TabViewItem()
-        tabView.configure(tabItem: TabItem(logo: "icon", sportName: "Football"), isSelected: true)
+        tabView.configure(tabItem: TabItem(logo: "icon", sportName: "Football"))
         tabView.backgroundColor = Colors.colorPrimaryDefault
         return tabView
     }

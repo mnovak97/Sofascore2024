@@ -5,8 +5,8 @@ class MockData: DataSourceProtocol {
     var sport: Sport
     
     init(for sport: Sport) {
-            self.sport = sport
-        }
+        self.sport = sport
+    }
     
     func fetch(completion: @escaping ([Section]?) -> Void) {
         let mockEvents = generateMockEvents()
@@ -30,10 +30,10 @@ class MockData: DataSourceProtocol {
             
             for _ in 0..<10 {
                 let matchSpain = Event(homeTeam: manchesterUnited, awayTeam: barcelona, homeScore: Int.random(in: 0...3), awayScore: Int.random(in: 0...3), status: [.finished, .inProgress, .notStarted].randomElement() ?? .notStarted, time: TimeInterval(Int.random(in: 1710000000...1720000000)))
-                            spainEvents.append(matchSpain)
+                spainEvents.append(matchSpain)
 
                 let matchGermany = Event(homeTeam: bayern, awayTeam: borrusia, homeScore: Int.random(in: 0...3), awayScore: Int.random(in: 0...3), status: [.finished, .inProgress, .notStarted].randomElement() ?? .notStarted, time: TimeInterval(Int.random(in: 1710000000...1720000000)))
-                            germanyEvents.append(matchGermany)
+                germanyEvents.append(matchGermany)
             }
             
             let bundesligaSection = Section(league: bundesliga, events: germanyEvents)
@@ -42,11 +42,33 @@ class MockData: DataSourceProtocol {
             sections.append(contentsOf: [laLigaSection, bundesligaSection])
                 
         case .basketball:
+            let nba = League(country: "USA", name: "NBA", logo: "nba")
+            let lakers = FootballTeam(name: "Los Angeles Lakers", logo: "lakers")
+            let gsw = FootballTeam(name: "Golden State Warriors", logo: "gsw")
             
-            break
-                
+            var events: [Event] = []
+            
+            for _ in 0..<10 {
+                let match = Event(homeTeam: lakers, awayTeam: gsw, homeScore: Int.random(in: 99...120), awayScore: Int.random(in: 99...120), status: [.finished,.inProgress,.notStarted].randomElement() ?? .notStarted , time: TimeInterval(Int.random(in: 1710000000...1720000000)))
+                events.append(match)
+            }
+            let nbaSection = Section(league: nba, events: events)
+            sections.append(contentsOf: [nbaSection, nbaSection])
+            
         case .amFootball:
-            break
+            let nfl = League(country: "USA", name: "NFL", logo: "nfl")
+            let buccaneers = FootballTeam(name: "Tampa Bay Buccaneers", logo: "buccaneers")
+            let patriots = FootballTeam(name: "New England Patriots", logo: "patriots")
+            
+            var events: [Event] = []
+            
+            for _ in 0..<10 {
+                let match = Event(homeTeam: buccaneers, awayTeam: patriots, homeScore: Int.random(in: 0...20), awayScore: Int.random(in: 0...20), status: [.finished,.inProgress,.notStarted].randomElement() ?? .notStarted , time: TimeInterval(Int.random(in: 1710000000...1720000000)))
+                events.append(match)
+                
+            }
+            let nflSection = Section(league: nfl, events: events)
+            sections.append(contentsOf: [nflSection, nflSection])
         }
             
         return sections

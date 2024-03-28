@@ -69,6 +69,10 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(EventDetailsViewController(), animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
     }
@@ -98,6 +102,7 @@ extension EventsViewController: UICollectionViewDataSource, UICollectionViewDele
 }
 
 extension EventsViewController: BaseViewProtocol {
+    
     func addViews() {
         view.addSubview(collectionView)
     }

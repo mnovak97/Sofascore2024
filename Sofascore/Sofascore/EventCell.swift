@@ -21,7 +21,9 @@ class EventCell: UICollectionViewCell {
         eventView.configure(event)
     }
 }
+
 extension EventCell: BaseViewProtocol {
+    
     func addViews() {
         addSubview(eventView)
     }

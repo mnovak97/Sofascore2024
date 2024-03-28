@@ -8,42 +8,57 @@ class MainViewController: UIViewController {
     private let customHeader: HeaderCustomView = .init()
     private let tabView: CustomTabView = .init()
     private let containerView: UIView = .init()
-    private var currentViewController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabView.delegate = self
         addViews()
         setupConstraints()
         styleViews()
-        showViewController(for: .football)
+        tabView.selectTab(for: Sport(rawValue: UserDefaults.standard.integer(forKey: "sport")) ?? .football)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func showViewController(for sport: Sport) {
+        let eventsViewController = EventsViewController(sport: sport)
+        add(eventsViewController, containerView)
+        eventsViewController.view.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
+}
+
+//MARK: UIViewController
+extension UIViewController {
+    
+    func add(_ child: UIViewController,_ view: UIView) {
         let animation = CATransition()
         animation.duration = 0.3
         animation.type = .push
         animation.subtype = .fromRight
         animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
-            
-        containerView.layer.add(animation, forKey: "viewControllerTransition")
-            
-        currentViewController?.removeFromParent()
-        currentViewController?.view.removeFromSuperview()
-                
-        let eventsViewController = EventsViewController(sport: sport)
-        addChild(eventsViewController)
-        containerView.addSubview(eventsViewController.view)
-        eventsViewController.view.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        eventsViewController.didMove(toParent: self)
-        currentViewController = eventsViewController
+        view.layer.add(animation, forKey: "viewControllerTransition")
+        addChild(child)
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
     }
-    
+
+    func remove() {
+        guard parent != nil else {
+            return
+        }
+        
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
 }
 
+//MARK: BaseViewProtocol
 extension MainViewController: BaseViewProtocol {
+    
     func addViews() {
         view.addSubview(safeAreaHeader)
         view.addSubview(customHeader)
@@ -73,12 +88,26 @@ extension MainViewController: BaseViewProtocol {
     
     func styleViews() {
         view.backgroundColor = .white
+        customHeader.delegate = self
+        tabView.delegate = self
     }
     
 }
 
+//MARK: CustomTabViewDelegate
 extension MainViewController: CustomTabViewDelegate {
+    
     func didSelectTab(for sport: Sport) {
         showViewController(for: sport)
+    }
+}
+
+//MARK: HeaderCustomViewDelegate
+extension MainViewController: HeaderCustomViewDelegate {
+    
+    func settingsImageTapped() {
+        let vc = SettingsViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true)
     }
 }

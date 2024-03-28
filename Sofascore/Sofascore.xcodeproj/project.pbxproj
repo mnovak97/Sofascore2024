@@ -41,6 +41,8 @@
 		557C2B902BA207770090FAD4 /* Roboto Condensed Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 557C2B8F2BA207770090FAD4 /* Roboto Condensed Regular.ttf */; };
 		557C2B942BA465150090FAD4 /* TeamInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B932BA465150090FAD4 /* TeamInfoView.swift */; };
 		557C2B962BA46D300090FAD4 /* TeamScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557C2B952BA46D300090FAD4 /* TeamScoreView.swift */; };
+		55A700ED2BB4453600929AB6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A700EC2BB4453600929AB6 /* SettingsViewController.swift */; };
+		55A700EF2BB4645200929AB6 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A700EE2BB4645200929AB6 /* EventDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		557C2B8F2BA207770090FAD4 /* Roboto Condensed Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Condensed Regular.ttf"; sourceTree = "<group>"; };
 		557C2B932BA465150090FAD4 /* TeamInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoView.swift; sourceTree = "<group>"; };
 		557C2B952BA46D300090FAD4 /* TeamScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScoreView.swift; sourceTree = "<group>"; };
+		55A700EC2BB4453600929AB6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		55A700EE2BB4645200929AB6 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				550BCE9A2BB1ED58000AEE1C /* SafeAreaHeaderView.swift */,
 				550BCE9C2BB21074000AEE1C /* CustomTabView.swift */,
 				550BCE9E2BB21083000AEE1C /* TabViewItem.swift */,
+				55A700EC2BB4453600929AB6 /* SettingsViewController.swift */,
+				55A700EE2BB4645200929AB6 /* EventDetailsViewController.swift */,
 			);
 			path = Sofascore;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 				557C2B802BA1C8930090FAD4 /* EventView.swift in Sources */,
 				557C2B542B9740CF0090FAD4 /* MainViewController.swift in Sources */,
 				557C2B502B9740CE0090FAD4 /* AppDelegate.swift in Sources */,
+				55A700EF2BB4645200929AB6 /* EventDetailsViewController.swift in Sources */,
 				550BCE412BAE4867000AEE1C /* EventCell.swift in Sources */,
 				550BCE9D2BB21074000AEE1C /* CustomTabView.swift in Sources */,
 				557C2B7B2BA1C57A0090FAD4 /* EventRepository.swift in Sources */,
@@ -284,6 +291,7 @@
 				557C2B522B9740CF0090FAD4 /* SceneDelegate.swift in Sources */,
 				550BCE9B2BB1ED58000AEE1C /* SafeAreaHeaderView.swift in Sources */,
 				550BCE992BB1E663000AEE1C /* HeaderCustomView.swift in Sources */,
+				55A700ED2BB4453600929AB6 /* SettingsViewController.swift in Sources */,
 				557C2B892BA1FC8F0090FAD4 /* LeagueView.swift in Sources */,
 				550BCE452BAE492B000AEE1C /* LeagueCell.swift in Sources */,
 				557C2B722BA0A3560090FAD4 /* MatchStatus.swift in Sources */,

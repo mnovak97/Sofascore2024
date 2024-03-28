@@ -1,16 +1,6 @@
 import Foundation
 
-enum Sport {
-    case football, basketball, amFootball
+enum Sport: Int {
     
-    var slug: String {
-        switch self {
-        case .football:
-            return "football"
-        case .basketball:
-            return "basketball"
-        case .amFootball:
-            return "american-football"
-        }
-    }
+    case football, basketball, amFootball
 }

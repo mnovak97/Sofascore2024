@@ -6,37 +6,50 @@ import SnapKit
 class HeaderCustomView: BaseView {
     
     private let logo: UIImageView = .init()
+    private let horizontalStack: UIStackView = .init()
     private let cupImage: UIImageView = .init()
     private let settings: UIImageView = .init()
+    var delegate: HeaderCustomViewDelegate?
     
     override func addViews() {
         addSubview(logo)
-        addSubview(cupImage)
-        addSubview(settings)
+        addSubview(horizontalStack)
+        horizontalStack.addArrangedSubview(cupImage)
+        horizontalStack.addArrangedSubview(settings)
     }
     
     override func setupConstraints() {
         logo.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(14)
             $0.leading.equalToSuperview().inset(16)
-            $0.trailing.lessThanOrEqualTo(cupImage.snp.leading)
+            $0.trailing.lessThanOrEqualTo(horizontalStack.snp.leading)
         }
-        cupImage.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(12)
-            $0.trailing.equalTo(settings.snp.leading).offset(-24)
-        }
-        settings.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(12)
+        horizontalStack.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
             $0.trailing.equalToSuperview().inset(16)
         }
     }
     
+    @objc private func settingsTapped() {
+        delegate?.settingsImageTapped()
+    }
+    
     override func styleViews() {
         backgroundColor = Colors.colorPrimaryDefault
+        horizontalStack.spacing = 16
         logo.image = UIImage(named: "sofascoreLockup")
         cupImage.image = UIImage(named: "icon2")
+        cupImage.contentMode = .scaleAspectFit
         settings.image = UIImage(named: "icon1")
+        settings.contentMode = .scaleAspectFit
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(settingsTapped))
+        settings.isUserInteractionEnabled = true
+        settings.addGestureRecognizer(tapGesture)
     }
+}
+
+protocol HeaderCustomViewDelegate: AnyObject {
+    func settingsImageTapped()
 }
 
 struct HeaderCustomViewRepresentable: UIViewRepresentable {
