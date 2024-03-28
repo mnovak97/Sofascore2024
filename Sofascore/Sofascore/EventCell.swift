@@ -33,6 +33,7 @@ extension EventCell: BaseViewProtocol {
     func setupConstraints() {
         eventView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
         }
     }
 }
