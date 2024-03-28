@@ -23,10 +23,7 @@ class LeagueView: BaseView {
         leagueName.textColor = Colors.onSurfaceLv2
         leagueLogo.contentMode = .scaleAspectFit
         arrowImage.contentMode = .scaleAspectFit
-        leagueLogo.image = UIImage(named: "laliga")
-        leagueCountry.text = "Spain"
         arrowImage.image = UIImage(named: "icPointerRight")
-        leagueName.text = "LaLiga"
     }
 
     override func setupConstraints() {
@@ -54,6 +51,12 @@ class LeagueView: BaseView {
     }
 
     override func setupBinding() {
+    }
+    
+    func configure(league: League) {
+        leagueLogo.image = UIImage(named: league.logo)
+        leagueCountry.text = league.country
+        leagueName.text = league.name
     }
 }
 
