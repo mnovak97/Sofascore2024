@@ -4,7 +4,6 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
-    private let safeAreaHeader: SafeAreaHeaderView = .init()
     private let customHeader: HeaderCustomView = .init()
     private let tabView: CustomTabView = .init()
     private let containerView: UIView = .init()
@@ -18,7 +17,11 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
+        customHeader.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        customHeader.isHidden = true
     }
     
     private func showViewController(for sport: Sport) {
@@ -60,25 +63,18 @@ extension UIViewController {
 extension MainViewController: BaseViewProtocol {
     
     func addViews() {
-        view.addSubview(safeAreaHeader)
-        view.addSubview(customHeader)
+        navigationController?.navigationBar.addSubview(customHeader)
         view.addSubview(tabView)
         view.addSubview(containerView)
     }
     
     func setupConstraints() {
-        safeAreaHeader.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaInsets.top)
-            $0.leading.equalTo(view.safeAreaInsets.left)
-            $0.trailing.equalTo(view.safeAreaInsets.right)
-        }
         customHeader.snp.makeConstraints {
-            $0.top.equalTo(safeAreaHeader.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(tabView.snp.top)
+            $0.edges.equalToSuperview()
         }
+        
         tabView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalTo(containerView.snp.top)
         }
         containerView.snp.makeConstraints {
@@ -88,8 +84,20 @@ extension MainViewController: BaseViewProtocol {
     
     func styleViews() {
         view.backgroundColor = .white
-        customHeader.delegate = self
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = Colors.colorPrimaryDefault
+        appearance.shadowColor = .clear
+        navigationController?.navigationBar.standardAppearance = appearance;
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         tabView.delegate = self
+        customHeader.delegate = self
+    }
+    
+    @objc private func settingsTapped() {
+        let vc = SettingsViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true)
     }
     
 }

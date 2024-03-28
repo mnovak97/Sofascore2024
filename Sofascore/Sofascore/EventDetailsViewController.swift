@@ -14,10 +14,6 @@ class EventDetailsViewController: UIViewController {
         styleViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-    }
-    
     @objc private func dismissButtonTapped() {
         self.dismiss(animated: true, completion: nil)
     }

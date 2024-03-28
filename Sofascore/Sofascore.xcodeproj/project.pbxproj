@@ -12,7 +12,6 @@
 		550BCE432BAE48E3000AEE1C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE422BAE48E3000AEE1C /* EventViewController.swift */; };
 		550BCE452BAE492B000AEE1C /* LeagueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE442BAE492B000AEE1C /* LeagueCell.swift */; };
 		550BCE992BB1E663000AEE1C /* HeaderCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE982BB1E663000AEE1C /* HeaderCustomView.swift */; };
-		550BCE9B2BB1ED58000AEE1C /* SafeAreaHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE9A2BB1ED58000AEE1C /* SafeAreaHeaderView.swift */; };
 		550BCE9D2BB21074000AEE1C /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE9C2BB21074000AEE1C /* CustomTabView.swift */; };
 		550BCE9F2BB21083000AEE1C /* TabViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCE9E2BB21083000AEE1C /* TabViewItem.swift */; };
 		550BCEA12BB21177000AEE1C /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550BCEA02BB21177000AEE1C /* TabItem.swift */; };
@@ -51,7 +50,6 @@
 		550BCE422BAE48E3000AEE1C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		550BCE442BAE492B000AEE1C /* LeagueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCell.swift; sourceTree = "<group>"; };
 		550BCE982BB1E663000AEE1C /* HeaderCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCustomView.swift; sourceTree = "<group>"; };
-		550BCE9A2BB1ED58000AEE1C /* SafeAreaHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaHeaderView.swift; sourceTree = "<group>"; };
 		550BCE9C2BB21074000AEE1C /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		550BCE9E2BB21083000AEE1C /* TabViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItem.swift; sourceTree = "<group>"; };
 		550BCEA02BB21177000AEE1C /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				550BCE422BAE48E3000AEE1C /* EventViewController.swift */,
 				550BCE442BAE492B000AEE1C /* LeagueCell.swift */,
 				550BCE982BB1E663000AEE1C /* HeaderCustomView.swift */,
-				550BCE9A2BB1ED58000AEE1C /* SafeAreaHeaderView.swift */,
 				550BCE9C2BB21074000AEE1C /* CustomTabView.swift */,
 				550BCE9E2BB21083000AEE1C /* TabViewItem.swift */,
 				55A700EC2BB4453600929AB6 /* SettingsViewController.swift */,
@@ -289,7 +286,6 @@
 				557C2B6F2BA0A2CD0090FAD4 /* League.swift in Sources */,
 				550BCEA32BB2138E000AEE1C /* Sport.swift in Sources */,
 				557C2B522B9740CF0090FAD4 /* SceneDelegate.swift in Sources */,
-				550BCE9B2BB1ED58000AEE1C /* SafeAreaHeaderView.swift in Sources */,
 				550BCE992BB1E663000AEE1C /* HeaderCustomView.swift in Sources */,
 				55A700ED2BB4453600929AB6 /* SettingsViewController.swift in Sources */,
 				557C2B892BA1FC8F0090FAD4 /* LeagueView.swift in Sources */,

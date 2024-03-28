@@ -9,6 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         let viewController = MainViewController()
+        UIBarButtonItem.appearance().tintColor = Colors.surfaceSurface1
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
     }

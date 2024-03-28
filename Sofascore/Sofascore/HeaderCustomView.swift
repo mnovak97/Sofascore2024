@@ -38,13 +38,13 @@ class HeaderCustomView: BaseView {
         backgroundColor = Colors.colorPrimaryDefault
         horizontalStack.spacing = 16
         logo.image = UIImage(named: "sofascoreLockup")
+        logo.contentMode = .scaleAspectFill
         cupImage.image = UIImage(named: "icon2")
         cupImage.contentMode = .scaleAspectFit
         settings.image = UIImage(named: "icon1")
         settings.contentMode = .scaleAspectFit
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(settingsTapped))
         settings.isUserInteractionEnabled = true
-        settings.addGestureRecognizer(tapGesture)
+        settings.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(settingsTapped)))
     }
 }
 
